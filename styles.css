@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root{
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-blue: hsl(229, 23%, 23%);
+  --dark-blue: hsl(227, 10%, 46%);
+
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
 *{
   box-sizing: border-box;
 }
@@ -5,7 +14,102 @@
 body{
   margin: 0;
   padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 14px;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+main{
+  background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+  background-color: var(--dark-cyan);
+  background-size: 50%;
+  background-position: left top, right bottom;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.card{
+  background: white;
+  border-radius: 1rem;
+  min-width: 375px;
+  box-shadow: 0px 5px 30px -5px #444;
+  overflow: hidden;
+}
+
+.card__content{
+  position: relative;
+}
+
+.bg{
+  background-image: url(images/bg-pattern-card.svg);
+  height: 150px;
+}
+
+.profile, .stats{
+  padding: 2rem;
+}
+
+.profile{
+  height: 10rem;
+  text-align: center;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile img{
+  background: white;
+  padding: .5em;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.name{
+  font-size: 18px;
+}
+
+.name h1{
+  display: inline;
+  font-size: 18px;
+}
+
+.profile .city{
+  display: block;
+}
+
+.stats{
+  border-top: 1px solid #ddd;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1em;
+}
+
+.stats .numbers{
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  font-weight: 700;
+}
+
+.stats span:not(.numbers){
+  letter-spacing: .2em;
+}
+
+.attribution {
+  font-size: 11px; text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
